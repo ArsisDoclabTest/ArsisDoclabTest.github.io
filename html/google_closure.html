@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <title>Google Closure Drag and Drop </title>
+	    <link rel="stylesheet" href="../root/stylesheets/styles.css">
+	    <script src="../bower_components/closure-library/closure/goog/base.js"></script>
+	    <script>
+		    goog.require('goog.fx.Dragger');
+		    goog.require('goog.dom');
+	    </script>
+	</head>
+	<body>
+		<div class="b-window">
+			<div class="b-window_draggable-element" id="one"></div>
+			<div class="b-window_draggable-element" id="two"></div>
+		</div>
+
+		<script>
+			var $ = goog.dom.getElement,
+				dragerElement1 = new goog.fx.Dragger($('one')),
+				dragerElement2 = new goog.fx.Dragger($('two'));
+		</script>
+	</body>
+</html>

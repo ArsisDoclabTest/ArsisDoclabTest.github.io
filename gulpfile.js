@@ -24,17 +24,17 @@ gulp.task('jquery', ['bower'], function() {
 });
 
 gulp.task('less', function() {
-    gulp.src('assets/less/index.less')
+    gulp.src('assets/less/styles.less')
 	  	.pipe(less())
 	    .pipe(cssminify())
-	    .pipe(gulp.dest('root/css'))
+	    .pipe(gulp.dest('root/stylesheets'))
 });
 
 gulp.task('css', function() {
-    gulp.src('assets/stylesheets')
+    gulp.src(['assets/stylesheets/pygment_trac.css', 'assets/stylesheets/stylesheets.css'])
 	  	.pipe(concat('page.css'))
 	    .pipe(cssminify())
-	    .pipe(gulp.dest('root/css'))
+	    .pipe(gulp.dest('root/stylesheets'))
 });
 
 gulp.task('default', ['css', 'less', 'jquery']);
