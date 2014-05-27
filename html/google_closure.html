@@ -4,7 +4,8 @@
 	    <meta charset="utf-8">
 	    <title>Google Closure Drag and Drop </title>
 	    <link rel="stylesheet" href="../root/stylesheets/styles.css">
-	    <script src="../bower_components/closure-library/closure/goog/base.js"></script>
+	    <script src="../root/javascript/closure-library/closure/goog/base.js"></script>
+	    <script src="../root/javascript/closure-library/closure/goog/labs/events/touch.js"></script>
 	    <script>
 		    goog.require('goog.fx.Dragger');
 		    goog.require('goog.dom');
@@ -13,7 +14,7 @@
 	<body>
 		<div class="b-window">
 			<div class="b-window_draggable-element" id="one"></div>
-			<div class="b-window_draggable-element" id="two"></div>
+			<div class="b-window_draggable-element b-window_draggable-element_left" id="two"></div>
 		</div>
 
 		<script>

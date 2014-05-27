@@ -1,1 +1,1 @@
-.b-window{position:relative;width:100%;height:100%}.b-window_draggable-element{position:relative;width:200px;height:100px;background-color:#ccc;}
+*{padding:0;margin:0}.b-window{position:relative;width:100%;height:100%}.b-window_draggable-element{position:absolute;width:200px;height:100px;background-color:#ccc;margin:10px}.b-window_draggable-element_left{left:300px}
