@@ -13,13 +13,27 @@
 
 		<script src="../root/javascript/all-jquery.js"></script>
 		<script>
-			var divs = $('#one, #two');
+			var divs = $('#one, #two'),
+				supportTouch = 'ontouchstart' in window,
+				supportTouchIE = window.navigator.msPointerEnabled;
 
-			if (!!('ontouchstart' in window)) {
+			if (supportTouch || supportTouchIE) {
 				divs.draggable({ delay: 300 });
 			} else {
 				divs.draggable();
-			}		
+			}
+
+			if (supportTouchIE) {
+				document.getElementsByClassName("b-window_draggable-element").addEventListener("MSPointerDown", function() {
+					$(this).trigger('mousedown');
+				}, false);
+				document.getElementsByClassName("b-window_draggable-element").addEventListener("MSPointerMove", function() {
+					$(this).trigger('mousemove');
+				}, false);
+				document.getElementsByClassName("b-window_draggable-element").addEventListener("MSPointerUp", function() {
+					$(this).trigger('mouseup');
+				}, false);
+			}
 		</script>
 	</body>
 </html>
