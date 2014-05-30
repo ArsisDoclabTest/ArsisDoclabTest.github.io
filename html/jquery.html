@@ -13,7 +13,13 @@
 
 		<script src="../root/javascript/all-jquery.js"></script>
 		<script>
-			$('#one, #two').draggable();
+			var divs = $('#one, #two');
+
+			if (!!('ontouchstart' in window)) {
+				divs.draggable({ delay: 300 });
+			} else {
+				divs.draggable();
+			}		
 		</script>
 	</body>
 </html>
