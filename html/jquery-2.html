@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <title>jQuery Drag and Drop </title>
+	    <link rel="stylesheet" href="../root/stylesheets/styles.css">
+	</head>
+	<body>
+		<div class="b-window">
+			<div class="b-window_draggable-element" id="one"></div>
+			<div class="b-window_draggable-element b-window_draggable-element_left" id="two"></div>
+		</div>
+
+		<script src="../root/javascript/all-jquery.js"></script>
+		<script>
+			var divs = $('#one, #two');
+
+			if (!!('ontouchstart' in window)) {
+				divs.draggable({ delay: 300 });
+			} else {
+				divs.draggable();
+			}		
+		</script>
+	</body>
+</html>
